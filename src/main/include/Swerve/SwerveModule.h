@@ -11,6 +11,7 @@
 #include <string>
 #include <wpi/numbers>
 
+
 class SwerveModule
 {
 public:
@@ -31,6 +32,8 @@ public:
         int azimuthMotorID;
         int azimuthCANCoderID;
 
+        int ticksPerRotation = 4096;
+
         bool invertDrive;
 
         PIDConfig drivePID;
@@ -41,6 +44,8 @@ public:
     void turnModule(double degrees);
     void driveModule(double velocity);
 
+
+
 private:
 
     int azimuthTrueZero;
@@ -48,6 +53,7 @@ private:
     ctre::phoenix::motorcontrol::can::TalonFX driveMotor;
     rev::CANSparkMax azimuthMotor;
     rev::SparkMaxPIDController azimuthPIDController;
-    ctre::phoenix::sensors::WPI_CANCoder azimuthEncoder;
+
+    rev::SparkMaxAlternateEncoder azimuthEncoder = azimuthMotor.GetAlternateEncoder(rev::CANEncoder::AlternateEncoderType::kQuadrature, 4096);
 
 };

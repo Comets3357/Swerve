@@ -1,6 +1,0 @@
-See file:///C:/Users/foris/Documents/Swerve/SwerveBaseTemplate/build/tmp/compileFrcUserProgramReleaseExecutableFrcUserProgramCpp/output.txt for all output for compileFrcUserProgramReleaseExecutableFrcUserProgramCpp.
-compiling DriveBase.cpp successful.
-
-compiling SwerveModule.cpp successful.
-
-Finished compileFrcUserProgramReleaseExecutableFrcUserProgramCpp, see full log file:///C:/Users/foris/Documents/Swerve/SwerveBaseTemplate/build/tmp/compileFrcUserProgramReleaseExecutableFrcUserProgramCpp/output.txt.

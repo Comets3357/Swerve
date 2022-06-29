@@ -3,8 +3,7 @@
 SwerveModule::SwerveModule(const SwerveModuleDefinition& definition, int azimuthOffset)
 : driveMotor(definition.driveMotorID), 
   azimuthMotor(definition.azimuthMotorID, rev::CANSparkMax::MotorType::kBrushless),
-  azimuthPIDController(azimuthMotor.GetPIDController()),
-  azimuthEncoder(definition.azimuthCANCoderID)
+  azimuthPIDController(azimuthMotor.GetPIDController())
 {
     driveMotor.ConfigFactoryDefault();
 
@@ -64,4 +63,6 @@ void SwerveModule::driveModule(double velocity)
 {
     
 }
+
+
 
