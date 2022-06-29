@@ -1,10 +1,10 @@
 -o
-C:\\Users\\foris\\Documents\\Swerve\\SwerveBaseTemplate\\build\\exe\\frcUserProgram\\release\\frcUserProgram
-C:\\Users\\foris\\Documents\\Swerve\\SwerveBaseTemplate\\build\\objs\\frcUserProgram\\release\\frcUserProgramCpp\\1mf4pbelp8uth2j97ubhveqf8\\Swerve.o
-C:\\Users\\foris\\Documents\\Swerve\\SwerveBaseTemplate\\build\\objs\\frcUserProgram\\release\\frcUserProgramCpp\\3bg5a77l7vd4edmrxq5jco6ri\\Robot.o
-C:\\Users\\foris\\Documents\\Swerve\\SwerveBaseTemplate\\build\\objs\\frcUserProgram\\release\\frcUserProgramCpp\\4ipmwnvld91t21754bsvxe4fw\\DriveBase.o
-C:\\Users\\foris\\Documents\\Swerve\\SwerveBaseTemplate\\build\\objs\\frcUserProgram\\release\\frcUserProgramCpp\\btsiiw6u55co7ejpc1jwed628\\SwerveModule.o
-C:\\Users\\foris\\Documents\\Swerve\\SwerveBaseTemplate\\build\\objs\\frcUserProgram\\release\\frcUserProgramCpp\\by9bj3bpovfb11c5jni8yldy6\\Gyro.o
+"C:\\Users\\foris\\Documents\\Visual Studio 2022\\Swerve\\build\\exe\\frcUserProgram\\release\\frcUserProgram"
+"C:\\Users\\foris\\Documents\\Visual Studio 2022\\Swerve\\build\\objs\\frcUserProgram\\release\\frcUserProgramCpp\\1mf4pbelp8uth2j97ubhveqf8\\Swerve.o"
+"C:\\Users\\foris\\Documents\\Visual Studio 2022\\Swerve\\build\\objs\\frcUserProgram\\release\\frcUserProgramCpp\\3bg5a77l7vd4edmrxq5jco6ri\\Robot.o"
+"C:\\Users\\foris\\Documents\\Visual Studio 2022\\Swerve\\build\\objs\\frcUserProgram\\release\\frcUserProgramCpp\\4ipmwnvld91t21754bsvxe4fw\\DriveBase.o"
+"C:\\Users\\foris\\Documents\\Visual Studio 2022\\Swerve\\build\\objs\\frcUserProgram\\release\\frcUserProgramCpp\\btsiiw6u55co7ejpc1jwed628\\SwerveModule.o"
+"C:\\Users\\foris\\Documents\\Visual Studio 2022\\Swerve\\build\\objs\\frcUserProgram\\release\\frcUserProgramCpp\\by9bj3bpovfb11c5jni8yldy6\\Gyro.o"
 C:\\Users\\foris\\.gradle\\caches\\transforms-3\\48f17b3efc5282a89bd5fa44483506f1\\transformed\\wpilibNewCommands-cpp-2022.3.1-linuxathena\\linux\\athena\\shared\\libwpilibNewCommands.so
 C:\\Users\\foris\\.gradle\\caches\\transforms-3\\0244868324c2fb0e07fde1038412df4c\\transformed\\REVLib-cpp-2022.1.1-linuxathenastatic\\linux\\athena\\static\\libREVLib.a
 C:\\Users\\foris\\.gradle\\caches\\transforms-3\\39b7b5478e4c46105cf662d882a73827\\transformed\\REVLib-driver-2022.1.1-linuxathenastatic\\linux\\athena\\static\\libREVLibDriver.a

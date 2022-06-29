@@ -1,29 +1,30 @@
-#pragma once
+// #pragma once
 
-#include <frc/TimedRobot.h>
-#include <frc/smartdashboard/SmartDashboard.h>
-#include <frc/SPI.h>
-#include "AHRS.h"
+// #include <frc/TimedRobot.h>
+// #include <frc/smartdashboard/SmartDashboard.h>
+// #include <frc/SPI.h>
+// #include "AHRS.h"
 
-struct GyroData
-{
-    double rawYaw = 0;
-    double rawPitch = 0;
-    double rawRoll = 0;
-    double angularMomentum;
-    double rotationalRate;
-};
+// struct GyroData
+// {
+//     double rawYaw = 0;
+//     double rawPitch = 0;
+//     double rawRoll = 0;
+//     double angularMomentum;
+//     double rotationalRate;
+// };
 
-class Gyro
-{
+// class Gyro
+// {
 
-public:
-    void RobotInit();
-    void AutonomousInit(GyroData &gyroData);
-    void TeleopInit(GyroData &gyroData);
-    void RobotPeriodic(GyroData &gyroData);
+// public:
+//     Gyro GetInstance();
+//     void RobotInit();
+//     void AutonomousInit(GyroData &gyroData);
+//     void TeleopInit(GyroData &gyroData);
+//     void RobotPeriodic(GyroData &gyroData);
 
-private:
-    AHRS gyro{frc::SPI::Port::kMXP};
+// private:
+//     AHRS gyro{frc::SPI::Port::kMXP};
 
-};
+// };

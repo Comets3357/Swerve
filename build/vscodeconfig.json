@@ -40,7 +40,7 @@
       "C:\\Users\\foris\\.gradle\\caches\\transforms-3\\a1deeb780726d8fcab4da1679229ba4d\\transformed\\cameraserver-cpp-2022.3.1-headers\\",
       "C:\\Users\\foris\\.gradle\\caches\\transforms-3\\0db5702a18949d54beec6d44b2db0b02\\transformed\\cscore-cpp-2022.3.1-headers\\",
       "C:\\Users\\foris\\.gradle\\caches\\transforms-3\\38c30bd3404596b9fb7e0e9817d9e3e2\\transformed\\opencv-cpp-4.5.2-1-headers\\",
-      "C:\\Users\\foris\\Documents\\Swerve\\SwerveBaseTemplate\\src\\main\\include\\",
+      "C:\\Users\\foris\\Documents\\Visual Studio 2022\\Swerve\\src\\main\\include\\",
       "C:\\Users\\foris\\.gradle\\caches\\transforms-3\\2261f9ee69f8cd30884f182972683287\\transformed\\wpilibNewCommands-cpp-2022.3.1-sources\\",
       "C:\\Users\\foris\\.gradle\\caches\\transforms-3\\929cbeb87a342a5db523941318aa6509\\transformed\\navx-cpp-4.0.447-sources\\",
       "C:\\Users\\foris\\.gradle\\caches\\transforms-3\\1f013ba8e0aafe8f7246030fbfafbf86\\transformed\\wpilibc-cpp-2022.3.1-sources\\",
@@ -91,7 +91,7 @@
       "C:\\Users\\foris\\.gradle\\caches\\transforms-3\\a1deeb780726d8fcab4da1679229ba4d\\transformed\\cameraserver-cpp-2022.3.1-headers\\",
       "C:\\Users\\foris\\.gradle\\caches\\transforms-3\\0db5702a18949d54beec6d44b2db0b02\\transformed\\cscore-cpp-2022.3.1-headers\\",
       "C:\\Users\\foris\\.gradle\\caches\\transforms-3\\38c30bd3404596b9fb7e0e9817d9e3e2\\transformed\\opencv-cpp-4.5.2-1-headers\\",
-      "C:\\Users\\foris\\Documents\\Swerve\\SwerveBaseTemplate\\src\\main\\include\\"
+      "C:\\Users\\foris\\Documents\\Visual Studio 2022\\Swerve\\src\\main\\include\\"
     ],
     "binaries": [
       {
@@ -100,7 +100,7 @@
           {
             "source": {
               "srcDirs": [
-                "C:\\Users\\foris\\Documents\\Swerve\\SwerveBaseTemplate\\src\\main\\cpp\\"
+                "C:\\Users\\foris\\Documents\\Visual Studio 2022\\Swerve\\src\\main\\cpp\\"
               ],
               "includes": [
                 "**/*.cpp",
@@ -110,7 +110,7 @@
             },
             "exportedHeaders": {
               "srcDirs": [
-                "C:\\Users\\foris\\Documents\\Swerve\\SwerveBaseTemplate\\src\\main\\include\\"
+                "C:\\Users\\foris\\Documents\\Visual Studio 2022\\Swerve\\src\\main\\include\\"
               ],
               "includes": [],
               "excludes": []
@@ -161,7 +161,7 @@
           "C:\\Users\\foris\\.gradle\\caches\\transforms-3\\a1deeb780726d8fcab4da1679229ba4d\\transformed\\cameraserver-cpp-2022.3.1-headers\\",
           "C:\\Users\\foris\\.gradle\\caches\\transforms-3\\0db5702a18949d54beec6d44b2db0b02\\transformed\\cscore-cpp-2022.3.1-headers\\",
           "C:\\Users\\foris\\.gradle\\caches\\transforms-3\\38c30bd3404596b9fb7e0e9817d9e3e2\\transformed\\opencv-cpp-4.5.2-1-headers\\",
-          "C:\\Users\\foris\\Documents\\Swerve\\SwerveBaseTemplate\\src\\main\\include\\"
+          "C:\\Users\\foris\\Documents\\Visual Studio 2022\\Swerve\\src\\main\\include\\"
         ],
         "sharedLibrary": false,
         "executable": true
@@ -171,7 +171,7 @@
       {
         "source": {
           "srcDirs": [
-            "C:\\Users\\foris\\Documents\\Swerve\\SwerveBaseTemplate\\src\\main\\cpp\\"
+            "C:\\Users\\foris\\Documents\\Visual Studio 2022\\Swerve\\src\\main\\cpp\\"
           ],
           "includes": [
             "**/*.cpp",
@@ -203,7 +203,7 @@
       {
         "source": {
           "srcDirs": [
-            "C:\\Users\\foris\\Documents\\Swerve\\SwerveBaseTemplate\\src\\main\\include\\"
+            "C:\\Users\\foris\\Documents\\Visual Studio 2022\\Swerve\\src\\main\\include\\"
           ],
           "includes": [],
           "excludes": []
@@ -275,7 +275,7 @@
       "C:\\Users\\foris\\.gradle\\caches\\transforms-3\\a1deeb780726d8fcab4da1679229ba4d\\transformed\\cameraserver-cpp-2022.3.1-headers\\",
       "C:\\Users\\foris\\.gradle\\caches\\transforms-3\\0db5702a18949d54beec6d44b2db0b02\\transformed\\cscore-cpp-2022.3.1-headers\\",
       "C:\\Users\\foris\\.gradle\\caches\\transforms-3\\38c30bd3404596b9fb7e0e9817d9e3e2\\transformed\\opencv-cpp-4.5.2-1-headers\\",
-      "C:\\Users\\foris\\Documents\\Swerve\\SwerveBaseTemplate\\src\\main\\include\\",
+      "C:\\Users\\foris\\Documents\\Visual Studio 2022\\Swerve\\src\\main\\include\\",
       "C:\\Users\\foris\\.gradle\\caches\\transforms-3\\2261f9ee69f8cd30884f182972683287\\transformed\\wpilibNewCommands-cpp-2022.3.1-sources\\",
       "C:\\Users\\foris\\.gradle\\caches\\transforms-3\\929cbeb87a342a5db523941318aa6509\\transformed\\navx-cpp-4.0.447-sources\\",
       "C:\\Users\\foris\\.gradle\\caches\\transforms-3\\1f013ba8e0aafe8f7246030fbfafbf86\\transformed\\wpilibc-cpp-2022.3.1-sources\\",
@@ -326,7 +326,7 @@
       "C:\\Users\\foris\\.gradle\\caches\\transforms-3\\a1deeb780726d8fcab4da1679229ba4d\\transformed\\cameraserver-cpp-2022.3.1-headers\\",
       "C:\\Users\\foris\\.gradle\\caches\\transforms-3\\0db5702a18949d54beec6d44b2db0b02\\transformed\\cscore-cpp-2022.3.1-headers\\",
       "C:\\Users\\foris\\.gradle\\caches\\transforms-3\\38c30bd3404596b9fb7e0e9817d9e3e2\\transformed\\opencv-cpp-4.5.2-1-headers\\",
-      "C:\\Users\\foris\\Documents\\Swerve\\SwerveBaseTemplate\\src\\main\\include\\"
+      "C:\\Users\\foris\\Documents\\Visual Studio 2022\\Swerve\\src\\main\\include\\"
     ],
     "binaries": [
       {
@@ -335,7 +335,7 @@
           {
             "source": {
               "srcDirs": [
-                "C:\\Users\\foris\\Documents\\Swerve\\SwerveBaseTemplate\\src\\main\\cpp\\"
+                "C:\\Users\\foris\\Documents\\Visual Studio 2022\\Swerve\\src\\main\\cpp\\"
               ],
               "includes": [
                 "**/*.cpp",
@@ -345,7 +345,7 @@
             },
             "exportedHeaders": {
               "srcDirs": [
-                "C:\\Users\\foris\\Documents\\Swerve\\SwerveBaseTemplate\\src\\main\\include\\"
+                "C:\\Users\\foris\\Documents\\Visual Studio 2022\\Swerve\\src\\main\\include\\"
               ],
               "includes": [],
               "excludes": []
@@ -395,7 +395,7 @@
           "C:\\Users\\foris\\.gradle\\caches\\transforms-3\\a1deeb780726d8fcab4da1679229ba4d\\transformed\\cameraserver-cpp-2022.3.1-headers\\",
           "C:\\Users\\foris\\.gradle\\caches\\transforms-3\\0db5702a18949d54beec6d44b2db0b02\\transformed\\cscore-cpp-2022.3.1-headers\\",
           "C:\\Users\\foris\\.gradle\\caches\\transforms-3\\38c30bd3404596b9fb7e0e9817d9e3e2\\transformed\\opencv-cpp-4.5.2-1-headers\\",
-          "C:\\Users\\foris\\Documents\\Swerve\\SwerveBaseTemplate\\src\\main\\include\\"
+          "C:\\Users\\foris\\Documents\\Visual Studio 2022\\Swerve\\src\\main\\include\\"
         ],
         "sharedLibrary": false,
         "executable": true
@@ -405,7 +405,7 @@
       {
         "source": {
           "srcDirs": [
-            "C:\\Users\\foris\\Documents\\Swerve\\SwerveBaseTemplate\\src\\main\\cpp\\"
+            "C:\\Users\\foris\\Documents\\Visual Studio 2022\\Swerve\\src\\main\\cpp\\"
           ],
           "includes": [
             "**/*.cpp",
@@ -436,7 +436,7 @@
       {
         "source": {
           "srcDirs": [
-            "C:\\Users\\foris\\Documents\\Swerve\\SwerveBaseTemplate\\src\\main\\include\\"
+            "C:\\Users\\foris\\Documents\\Visual Studio 2022\\Swerve\\src\\main\\include\\"
           ],
           "includes": [],
           "excludes": []
