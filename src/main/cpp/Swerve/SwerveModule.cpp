@@ -34,13 +34,13 @@ SwerveModule::SwerveModule(const SwerveModuleDefinition& definition, int azimuth
             azimuthTrueZero = definition.zeroPosition;
         break;
         case 90:
-            azimuthTrueZero = definition.zeroPosition - 0.25; // arbitrary number, need to prove
+            azimuthTrueZero = definition.zeroPosition - 0.25 * ticksPerRotation; // arbitrary number, need to prove
         break;
         case 180:
-            azimuthTrueZero = definition.zeroPosition + 0.5; // arbitrary number, need to prove
+            azimuthTrueZero = definition.zeroPosition + 0.5 * ticksPerRotation; // arbitrary number, need to prove
         break;
         case 270:
-            azimuthTrueZero = definition.zeroPosition + 0.25; // arbitrary number, need to prove
+            azimuthTrueZero = definition.zeroPosition + 0.25 * ticksPerRotation; // arbitrary number, need to prove
         break;
     }
 
@@ -56,12 +56,17 @@ SwerveModule::SwerveModule(const SwerveModuleDefinition& definition, int azimuth
 
 void SwerveModule::turnModule(double degrees)
 {
-
+    azimuthPIDController.SetReference(azimuthTrueZero + DegreesToPosition(degrees),rev::CANSparkMaxLowLevel::ControlType::kPosition);
 }
 
 void SwerveModule::driveModule(double velocity)
 {
-    
+    driveMotor.Set(ctre::phoenix::motorcontrol::ControlMode::Velocity, velocity);
+}
+
+double SwerveModule::DegreesToPosition(double degrees)
+{
+    return degrees / 360;
 }
 
 

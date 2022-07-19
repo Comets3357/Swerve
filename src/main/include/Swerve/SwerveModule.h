@@ -10,6 +10,7 @@
 #include <units/velocity.h>
 #include <string>
 #include <wpi/numbers>
+#include <frc/geometry/Rotation2d.h>
 
 
 class SwerveModule
@@ -44,11 +45,19 @@ public:
     void turnModule(double degrees);
     void driveModule(double velocity);
 
+    frc::Rotation2d azimuthRotation = frc::Rotation2d::Rotation2d();
+
 
 
 private:
 
+    int ticksPerRotation = 4096;
+
+    double DegreesToPosition(double degrees);
+
     int azimuthTrueZero;
+
+    double currentAzimuthDegree = 0;
 
     ctre::phoenix::motorcontrol::can::TalonFX driveMotor;
     rev::CANSparkMax azimuthMotor;
