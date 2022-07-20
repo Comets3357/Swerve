@@ -107,7 +107,7 @@ double SwerveModule::GetAbsolutePosition()
 
 double SwerveModule::GetAzimuthDegrees()
 {
-    return std::fmod(((azimuthAbsouteTrueZero+GetAbsolutePosition())*360),360);
+    return std::fmod(360+std::fmod(((GetAbsolutePosition() - azimuthAbsouteTrueZero)*360),360),360);
 }
 
 
