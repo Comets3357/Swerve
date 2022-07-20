@@ -49,16 +49,16 @@ void Swerve::FieldRelativeDrive(units::meters_per_second_t xVelocity, units::met
     // auto backLOptimized = frc::SwerveModuleState::Optimize(backL, units::radian_t(azimuthEncoder.GetDistance()));
 
     // TURNS EACH MODULE TO DESIRED ANGLE
-    fl.turnModule(frontL.angle.Degrees().value());
-    fr.turnModule(frontR.angle.Degrees().value());
-    bl.turnModule(backL.angle.Degrees().value());
-    br.turnModule(backR.angle.Degrees().value());
+    fl.SetModuleAbsolutePosition(frontL.angle.Degrees().value());
+    fr.SetModuleAbsolutePosition(frontR.angle.Degrees().value());
+    bl.SetModuleAbsolutePosition(backL.angle.Degrees().value());
+    br.SetModuleAbsolutePosition(backR.angle.Degrees().value());
 
     // DRIVES EACH MODULE AT DESIRED WHEEL SPEED
-    fl.driveModule(frontL.speed.value());
-    fr.driveModule(frontR.speed.value());
-    bl.driveModule(backL.speed.value());
-    br.driveModule(backR.speed.value());
+    fl.DriveModule(frontL.speed.value());
+    fr.DriveModule(frontR.speed.value());
+    bl.DriveModule(backL.speed.value());
+    br.DriveModule(backR.speed.value());
 }
 
 void Swerve::RegularDrive(units::meters_per_second_t xVelocity, units::meters_per_second_t yVelocity, units::radians_per_second_t rotVelocity)
@@ -83,14 +83,14 @@ void Swerve::RegularDrive(units::meters_per_second_t xVelocity, units::meters_pe
     // auto backLOptimized = frc::SwerveModuleState::Optimize(backL, units::radian_t(azimuthEncoder.GetDistance()));
 
     // TURNS EACH MODULE TO DESIRED ANGLE
-    fl.turnModule(frontL.angle.Degrees().value());
-    fr.turnModule(frontR.angle.Degrees().value());
-    bl.turnModule(backL.angle.Degrees().value());
-    br.turnModule(backR.angle.Degrees().value());
+    fl.SetModuleAbsolutePosition(frontL.angle.Degrees().value());
+    fr.SetModuleAbsolutePosition(frontR.angle.Degrees().value());
+    bl.SetModuleAbsolutePosition(backL.angle.Degrees().value());
+    br.SetModuleAbsolutePosition(backR.angle.Degrees().value());
 
     // DRIVES EACH MODULE AT DESIRED WHEEL SPEED
-    fl.driveModule(frontL.speed.value());
-    fr.driveModule(frontR.speed.value());
-    bl.driveModule(backL.speed.value());
-    br.driveModule(backR.speed.value());
+    fl.DriveModule(frontL.speed.value());
+    fr.DriveModule(frontR.speed.value());
+    bl.DriveModule(backL.speed.value());
+    br.DriveModule(backR.speed.value());
 }

@@ -42,8 +42,8 @@ public:
     };
 
     SwerveModule(const SwerveModuleDefinition& definition, int azimuthOffset);
-    void TurnModule(double radians);
-    void SetModulePosition(double radians);
+    void SetModuleRelativePosition(double degrees);
+    void SetModuleAbsolutePosition(double degrees);
     void DriveModule(double velocity);
 
     //frc::Rotation2d azimuthRotation = frc::Rotation2d::Rotation2d();
@@ -54,8 +54,6 @@ private:
 
     int ticksPerRotation = 900;
 
-    double RadiansToAbsolutePosition(double radians);
-    double RadiansToDegrees(double radians);
     double DegreesToAbsolute(double degrees);
     double GetAbsolutePosition();
     double GetAzimuthDegrees();

@@ -55,35 +55,25 @@ SwerveModule::SwerveModule(const SwerveModuleDefinition& definition, int azimuth
     }
 }
 
-void SwerveModule::TurnModule(double radians)
+void SwerveModule::SetModuleRelativePosition(double degrees)
 {
-    targetAzimuthAbsolute = DegreesToAbsolute(RadiansToDegrees(radians));
+    targetAzimuthAbsolute = DegreesToAbsolute(degrees);
     targetAzimuthRev = targetAzimuthAbsolute * ticksPerRotation;
     azimuthPIDController.SetReference(azimuthRevEncoder.GetPosition() + targetAzimuthRev,rev::CANSparkMaxLowLevel::ControlType::kPosition);
 }
 
-void SwerveModule::SetModulePosition(double radians)
+void SwerveModule::SetModuleAbsolutePosition(double degrees)
 {
-    currentAzimuthAbsolute = GetAbsolutePosition();
-    targetAzimuthAbsolute = DegreesToAbsolute(RadiansToDegrees(radians));
-    targetAzimuthRev = (currentAzimuthAbsolute-targetAzimuthAbsolute)*ticksPerRotation;
-    //currentAzimuthAbsolute = currentAzimuthAbsolute + RadiansToAbsolutePosition(radians);
-    azimuthPIDController.SetReference(azimuthRevEncoder.GetPosition() + targetAzimuthRev,rev::CANSparkMaxLowLevel::ControlType::kPosition);
+    double azimuthDegreesToTravel = degrees - GetAzimuthDegrees();
+    double azimuthRevToTravel = azimuthDegreesToTravel/360*ticksPerRotation;
+    azimuthPIDController.SetReference(azimuthRevEncoder.GetPosition() + azimuthRevToTravel,rev::CANSparkMaxLowLevel::ControlType::kPosition);
 }
+
+
 
 void SwerveModule::DriveModule(double velocity)
 {
     driveMotor.Set(ctre::phoenix::motorcontrol::ControlMode::Velocity, velocity);
-}
-
-double SwerveModule::RadiansToAbsolutePosition(double radians)
-{
-    return (radians * (180.0 / M_PI))/360;
-}
-
-double SwerveModule::RadiansToDegrees(double radians)
-{
-    return radians * 180 / M_PI;
 }
 
 double SwerveModule::DegreesToAbsolute(double degrees)
