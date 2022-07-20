@@ -42,27 +42,35 @@ public:
     };
 
     SwerveModule(const SwerveModuleDefinition& definition, int azimuthOffset);
-    void turnModule(double degrees);
-    void driveModule(double velocity);
+    void TurnModule(double radians);
+    void SetModulePosition(double radians);
+    void DriveModule(double velocity);
 
-    frc::Rotation2d azimuthRotation = frc::Rotation2d::Rotation2d();
+    //frc::Rotation2d azimuthRotation = frc::Rotation2d::Rotation2d();
 
 
 
 private:
 
-    int ticksPerRotation = 4096;
+    int ticksPerRotation = 900;
 
-    double DegreesToPosition(double degrees);
+    double RadiansToAbsolutePosition(double radians);
+    double RadiansToDegrees(double radians);
+    double DegreesToAbsolute(double degrees);
+    double GetAbsolutePosition();
+    double GetAzimuthDegrees();
 
-    int azimuthTrueZero;
+    double azimuthAbsouteTrueZero;
 
-    double currentAzimuthDegree = 0;
+    double currentAzimuthAbsolute = 0;
+    double targetAzimuthAbsolute = 0;
+    double targetAzimuthRev = 0;
 
     ctre::phoenix::motorcontrol::can::TalonFX driveMotor;
     rev::CANSparkMax azimuthMotor;
     rev::SparkMaxPIDController azimuthPIDController;
 
-    rev::SparkMaxAlternateEncoder azimuthEncoder = azimuthMotor.GetAlternateEncoder(rev::CANEncoder::AlternateEncoderType::kQuadrature, 4096);
+    rev::SparkMaxAlternateEncoder azimuthAbsoluteEncoder = azimuthMotor.GetAlternateEncoder(rev::CANEncoder::AlternateEncoderType::kQuadrature, 4096);
+    rev::SparkMaxRelativeEncoder azimuthRevEncoder = azimuthMotor.GetEncoder();
 
 };
