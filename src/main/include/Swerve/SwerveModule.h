@@ -3,14 +3,7 @@
 #include <ctre/phoenix/motorcontrol/can/WPI_TalonFX.h>
 #include <rev/CANSparkMax.h>
 #include <rev/SparkMaxPIDController.h>
-#include <ctre/phoenix/sensors/WPI_CANCoder.h>
-#include <frc/kinematics/SwerveModuleState.h>
-#include <units/angular_velocity.h>
-#include <units/time.h>
-#include <units/velocity.h>
-#include <string>
-#include <wpi/numbers>
-#include <frc/geometry/Rotation2d.h>
+
 
 
 class SwerveModule
@@ -19,6 +12,7 @@ public:
 
     struct PIDConfig
     {
+        public:
         double p;
         double i;
         double d;
@@ -27,13 +21,13 @@ public:
 
     struct SwerveModuleDefinition
     {
+        public:
         int zeroPosition;
 
         int driveMotorID;
         int azimuthMotorID;
         int azimuthCANCoderID;
 
-        int ticksPerRotation = 4096;
 
         bool invertDrive;
 
@@ -41,18 +35,21 @@ public:
         PIDConfig turnPID;
     };
 
-    SwerveModule(const SwerveModuleDefinition& definition, int azimuthOffset);
+    SwerveModule(const SwerveModuleDefinition& definition, int azimuthOffset, int driveID, int azimuthID);
     void SetModuleRelativePosition(double degrees);
     void SetModuleAbsolutePosition(double degrees);
     void DriveModule(double velocity);
 
-    //frc::Rotation2d azimuthRotation = frc::Rotation2d::Rotation2d();
+    SwerveModuleDefinition swerveDefinition;
 
 
 
 private:
 
-    int ticksPerRotation = 900;
+    bool zeroed = false;
+    double encoderMax = 1;
+
+    double ticksPerRotation = 21.4;
 
     double DegreesToAbsolute(double degrees);
     double GetAbsolutePosition();
@@ -64,11 +61,13 @@ private:
     double targetAzimuthAbsolute = 0;
     double targetAzimuthRev = 0;
 
-    ctre::phoenix::motorcontrol::can::TalonFX driveMotor;
-    rev::CANSparkMax azimuthMotor;
+    double MAXSPEED = 1320*14;
+
+    ctre::phoenix::motorcontrol::can::TalonFX driveMotor;//{swerveDefinition.driveMotorID};
+    rev::CANSparkMax azimuthMotor;//{swerveDefinition.azimuthMotorID, rev::CANSparkMax::MotorType::kBrushless};
     rev::SparkMaxPIDController azimuthPIDController;
 
-    rev::SparkMaxAlternateEncoder azimuthAbsoluteEncoder = azimuthMotor.GetAlternateEncoder(rev::CANEncoder::AlternateEncoderType::kQuadrature, 4096);
-    rev::SparkMaxRelativeEncoder azimuthRevEncoder = azimuthMotor.GetEncoder();
+    rev::SparkMaxAlternateEncoder azimuthAbsoluteEncoder;
+    rev::SparkMaxRelativeEncoder azimuthRevEncoder;
 
 };

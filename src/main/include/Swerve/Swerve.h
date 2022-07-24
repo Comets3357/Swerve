@@ -4,7 +4,6 @@
 #include <frc/geometry/Translation2d.h>
 #include <frc/kinematics/SwerveDriveKinematics.h>
 #include <frc/kinematics/SwerveDriveOdometry.h>
-#include <frc/geometry/Translation2d.h>
 #include <units/length.h>
 #include "Swerve/SwerveModule.h"
 
@@ -38,13 +37,16 @@ SwerveModule fl;
 SwerveModule fr;
 SwerveModule bl;
 SwerveModule br;
+int i = 0;
+
+bool Zeroed;
 
 units::meters_per_second_t moduleMaxSpeed{16_fps}; // arbitrary number that may change
 
-frc::Translation2d frontLeftModule{+1_m, +1_m};
-frc::Translation2d frontRightModule{+1_m, -1_m};
-frc::Translation2d backLeftModule{-1_m, +1_m};
-frc::Translation2d backRightModule{-1_m, -1_m};
+frc::Translation2d frontLeftModule{+0.263525_m, +0.263525_m};
+frc::Translation2d frontRightModule{+0.263525_m, -0.263525_m};
+frc::Translation2d backLeftModule{-0.263525_m, +0.263525_m};
+frc::Translation2d backRightModule{-0.263525_m, -0.263525_m};
 
 frc::SwerveDriveKinematics<4> kinematics{frontLeftModule, frontRightModule, backLeftModule, backRightModule};
 

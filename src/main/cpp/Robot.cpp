@@ -9,10 +9,18 @@
 #include <frc/smartdashboard/SmartDashboard.h>
 #include "Constants.h"
 
+
 void Robot::RobotInit() {
   m_chooser.SetDefaultOption(kAutoNameDefault, kAutoNameDefault);
   m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
   frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
+
+  
+
+  frontLeft.azimuthCANCoderID = 1;
+  frontRight.azimuthCANCoderID = 2;
+  backLeft.azimuthCANCoderID = 3;
+  backRight.azimuthCANCoderID = 4;
 }
 
 /**
@@ -23,7 +31,33 @@ void Robot::RobotInit() {
  * <p> This runs after the mode specific periodic functions, but before
  * LiveWindow and SmartDashboard integrated updating.
  */
-void Robot::RobotPeriodic() {}
+void Robot::RobotPeriodic() {
+  double yDrive;
+  double xDrive;
+  double rDrive;
+
+
+  yDrive = -primary.GetRawAxis(1);
+  xDrive = primary.GetRawAxis(0);
+  rDrive = primary.GetRawAxis(4);
+  if (abs(sqrt(pow(yDrive,2) + pow(xDrive,2))) < 0.08)
+  {
+    yDrive = 0;
+    xDrive = 0;
+  }
+  if (primary.GetRawAxis(4) > -0.08 && primary.GetRawAxis(4) < 0.08)
+  {
+    rDrive = 0;
+  }
+  double maxMetersPerSecond;
+  
+  
+  swerve.Drive(units::meters_per_second_t{yDrive}
+              ,units::meters_per_second_t{xDrive},
+              units::radians_per_second_t{rDrive}, true);
+  frc::SmartDashboard::PutNumber("1", primary.GetRawAxis(1));
+  frc::SmartDashboard::PutNumber("2", primary.GetRawAxis(0));
+}
 
 /**
  * This autonomous (along with the chooser code above) shows how to select
