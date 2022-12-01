@@ -11,6 +11,10 @@ class Swerve
 {
 public:
 
+void RobotInit();
+void RobotDisabled();
+void RobotDisabledInit();
+
 // CREATES OBJECTS OF ALL FOUR MODULES ON THE ROBOT
 Swerve(SwerveModule::SwerveModuleDefinition frontLeft,
        SwerveModule::SwerveModuleDefinition frontRight,
@@ -22,6 +26,8 @@ void Drive(units::meters_per_second_t xVelocity,
            units::meters_per_second_t yVelocity,
            units::radians_per_second_t rotVelocity,
            bool fieldRelative);
+
+
 
 private:
 
@@ -51,5 +57,11 @@ frc::Translation2d backRightModule{-0.263525_m, -0.263525_m};
 frc::SwerveDriveKinematics<4> kinematics{frontLeftModule, frontRightModule, backLeftModule, backRightModule};
 
 AHRS gyro{frc::SPI::Port::kMXP};
+
+
+double degrees = 0;
+    double lastDegree = 0;
+    int rotationOn = 0;
+    double FinalRotation = 0;
 
 };

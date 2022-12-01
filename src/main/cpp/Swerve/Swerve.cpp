@@ -10,13 +10,35 @@ Swerve::Swerve(SwerveModule::SwerveModuleDefinition frontLeft,
   bl(backLeft, 270, 6, 5),
   br(backRight, 180, 8, 7)
 
-  
 {
+    //gyro.Reset();
+}
+
+void Swerve::RobotDisabledInit()
+{
+    //gyro.Reset();
+}
+
+void Swerve::RobotDisabled()
+{
+    frc::SmartDashboard::PutNumber("YAW", gyro.GetYaw());
+    frc::SmartDashboard::PutNumber("ISCALIBRATING", gyro.IsCalibrating());
+    gyro.Reset();
+}
+
+void Swerve::RobotInit()
+{
+    gyro.Calibrate();
+    gyro.Reset();
+    gyro.ZeroYaw();
+    frc::SmartDashboard::PutNumber("INITI", gyro.GetYaw());
     
 }
 
 void Swerve::Drive(units::meters_per_second_t xVelocity, units::meters_per_second_t yVelocity, units::radians_per_second_t rotVelocity, bool fieldRelative)
 {
+
+    
     // DETERMINES IF WE ARE USING FIELD RELATIVE DRIVE
     if (fieldRelative)
     {
@@ -31,11 +53,27 @@ void Swerve::Drive(units::meters_per_second_t xVelocity, units::meters_per_secon
 
 void Swerve::FieldRelativeDrive(units::meters_per_second_t xVelocity, units::meters_per_second_t yVelocity, units::radians_per_second_t rotVelocity)
 {
+
+    degrees = gyro.GetYaw();
+    if (lastDegree  > 100 && degrees < -100)
+        {
+            rotationOn++;
+        }
+        else if (lastDegree < -100 && degrees > 100)
+        {
+            rotationOn--;
+        }
+
+        
+        lastDegree = degrees;
+        FinalRotation = (((double)rotationOn + (degrees / 360.0)) * (360.0 / 395.9) * 360.0);
+
     frc::SmartDashboard::PutNumber("ROTATION", gyro.GetYaw());
     // CREATES A CHASSIS SPEED OBJECT AND STORES GENERAL VALS FOR THE DRIVE BASE
     // 45 degrees needs to be updated to robot angle (with 0 degrees being facing the opposite alliance wall)
-    frc::ChassisSpeeds speeds = frc::ChassisSpeeds::FromFieldRelativeSpeeds(xVelocity, yVelocity, rotVelocity, frc::Rotation2d(units::degree_t{gyro.GetYaw()}));
-
+    // frc::ChassisSpeeds speeds = frc::ChassisSpeeds::FromFieldRelativeSpeeds(xVelocity, yVelocity, rotVelocity, frc::Rotation2d(units::degree_t{gyro.GetYaw()}));
+    frc::ChassisSpeeds speeds = frc::ChassisSpeeds::FromFieldRelativeSpeeds(xVelocity, yVelocity, rotVelocity, frc::Rotation2d(units::degree_t{-FinalRotation}));
+    frc::SmartDashboard::PutNumber("DGREESLIDSFKJKDJF", FinalRotation);
     // CONVERTS CHASSIS STATE TO SWERVE MODULE STATES AND STORES THEM
     auto moduleStates = kinematics.ToSwerveModuleStates(speeds);
 
@@ -118,3 +156,5 @@ void Swerve::RegularDrive(units::meters_per_second_t xVelocity, units::meters_pe
     br.DriveModule(backR.speed.value());
     frc::SmartDashboard::PutNumber("backRspeed", backR.speed.value());
 }
+
+

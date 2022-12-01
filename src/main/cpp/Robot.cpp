@@ -21,6 +21,9 @@ void Robot::RobotInit() {
   frontRight.azimuthCANCoderID = 2;
   backLeft.azimuthCANCoderID = 3;
   backRight.azimuthCANCoderID = 4;
+
+  swerve.RobotInit();
+  
 }
 
 /**
@@ -32,31 +35,7 @@ void Robot::RobotInit() {
  * LiveWindow and SmartDashboard integrated updating.
  */
 void Robot::RobotPeriodic() {
-  double yDrive;
-  double xDrive;
-  double rDrive;
 
-
-  yDrive = -primary.GetRawAxis(1);
-  xDrive = primary.GetRawAxis(0);
-  rDrive = primary.GetRawAxis(4);
-  if (abs(sqrt(pow(yDrive,2) + pow(xDrive,2))) < 0.08)
-  {
-    yDrive = 0;
-    xDrive = 0;
-  }
-  if (primary.GetRawAxis(4) > -0.08 && primary.GetRawAxis(4) < 0.08)
-  {
-    rDrive = 0;
-  }
-  double maxMetersPerSecond;
-  
-  
-  swerve.Drive(units::meters_per_second_t{yDrive}
-              ,units::meters_per_second_t{xDrive},
-              units::radians_per_second_t{rDrive}, true);
-  frc::SmartDashboard::PutNumber("1", primary.GetRawAxis(1));
-  frc::SmartDashboard::PutNumber("2", primary.GetRawAxis(0));
 }
 
 /**
@@ -93,11 +72,41 @@ void Robot::AutonomousPeriodic() {
 
 void Robot::TeleopInit() {}
 
-void Robot::TeleopPeriodic() {}
+void Robot::TeleopPeriodic() {
+    double yDrive;
+  double xDrive;
+  double rDrive;
 
-void Robot::DisabledInit() {}
 
-void Robot::DisabledPeriodic() {}
+  yDrive = primary.GetRawAxis(0);
+  xDrive = primary.GetRawAxis(3);
+  rDrive = primary.GetRawAxis(1);
+  if (abs(sqrt(pow(yDrive,2) + pow(xDrive,2))) < 0.1)
+  {
+    yDrive = 0;
+    xDrive = 0;
+  }
+  if (primary.GetRawAxis(1) > -0.08 && primary.GetRawAxis(1) < 0.1)
+  {
+    rDrive = 0;
+  }
+  double maxMetersPerSecond;
+  
+  
+  swerve.Drive(units::meters_per_second_t{yDrive}
+              ,units::meters_per_second_t{xDrive},
+              units::radians_per_second_t{rDrive}, true);
+  frc::SmartDashboard::PutNumber("1", primary.GetRawAxis(1));
+  frc::SmartDashboard::PutNumber("2", primary.GetRawAxis(0));
+}
+
+void Robot::DisabledInit() {
+  swerve.RobotDisabledInit();
+}
+
+void Robot::DisabledPeriodic() {
+  swerve.RobotDisabled();
+}
 
 void Robot::TestInit() {}
 

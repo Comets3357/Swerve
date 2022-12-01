@@ -10,6 +10,8 @@ class SwerveModule
 {
 public:
 
+    void DisabledPeriodic();
+
     struct PIDConfig
     {
         public:
@@ -61,7 +63,7 @@ private:
     double targetAzimuthAbsolute = 0;
     double targetAzimuthRev = 0;
 
-    double MAXSPEED = 1320*14;
+    double MAXSPEED = 1320*24;
 
     ctre::phoenix::motorcontrol::can::TalonFX driveMotor;//{swerveDefinition.driveMotorID};
     rev::CANSparkMax azimuthMotor;//{swerveDefinition.azimuthMotorID, rev::CANSparkMax::MotorType::kBrushless};

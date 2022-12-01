@@ -8,6 +8,8 @@ SwerveModule::SwerveModule(const SwerveModuleDefinition& definition, int azimuth
   azimuthRevEncoder(azimuthMotor.GetEncoder()),
   azimuthAbsoluteEncoder(azimuthMotor.GetAlternateEncoder(rev::CANEncoder::AlternateEncoderType::kQuadrature, 8192))
 {
+    azimuthMotor.SetIdleMode(rev::CANSparkMax::IdleMode::kBrake);
+    driveMotor.SetNeutralMode(ctre::phoenix::motorcontrol::NeutralMode::Brake);
 
     azimuthMotor.SetInverted(true);
     //driveMotor{DriveID};
@@ -136,6 +138,12 @@ double SwerveModule::GetAbsolutePosition()
 double SwerveModule::GetAzimuthDegrees()
 {
     return std::fmod(360+std::fmod(((GetAbsolutePosition() - azimuthAbsouteTrueZero)*360),360),360);
+}
+
+void SwerveModule::DisabledPeriodic()
+{
+    azimuthMotor.SetIdleMode(rev::CANSparkMax::IdleMode::kCoast);
+    driveMotor.SetNeutralMode(ctre::phoenix::motorcontrol::NeutralMode::Coast);
 }
 
 

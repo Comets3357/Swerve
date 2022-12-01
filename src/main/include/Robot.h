@@ -38,8 +38,6 @@ class Robot : public frc::TimedRobot {
   SwerveModule::SwerveModuleDefinition backLeft{};
   SwerveModule::SwerveModuleDefinition backRight{};
 
-  int i = 0;
-
 
   Swerve swerve{frontLeft, frontRight, backLeft, backRight};
 
