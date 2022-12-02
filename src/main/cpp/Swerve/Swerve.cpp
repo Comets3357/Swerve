@@ -91,14 +91,18 @@ void Swerve::FieldRelativeDrive(units::meters_per_second_t xVelocity, units::met
     // auto backLOptimized = frc::SwerveModuleState::Optimize(backL, units::radian_t(azimuthEncoder.GetDistance()));
 
     // TURNS EACH MODULE TO DESIRED ANGLE
-    fl.SetModuleAbsolutePosition(frontL.angle.Degrees().value());
-    frc::SmartDashboard::PutNumber("FrontLAngle", frontL.angle.Degrees().value());
-    fr.SetModuleAbsolutePosition(frontR.angle.Degrees().value());
-    frc::SmartDashboard::PutNumber("FrontRAngle", frontR.angle.Degrees().value());
-    bl.SetModuleAbsolutePosition(backL.angle.Degrees().value());
-    frc::SmartDashboard::PutNumber("backLAngle", backL.angle.Degrees().value());
-    br.SetModuleAbsolutePosition(backR.angle.Degrees().value());
-    frc::SmartDashboard::PutNumber("backRAngle", backR.angle.Degrees().value());
+
+    if ((double)xVelocity != 0 || (double)yVelocity != 0 || (double)rotVelocity != 0)
+    {
+        fl.SetModuleAbsolutePosition(frontL.angle.Degrees().value());
+        frc::SmartDashboard::PutNumber("FrontLAngle", frontL.angle.Degrees().value());
+        fr.SetModuleAbsolutePosition(frontR.angle.Degrees().value());
+        frc::SmartDashboard::PutNumber("FrontRAngle", frontR.angle.Degrees().value());
+        bl.SetModuleAbsolutePosition(backL.angle.Degrees().value());
+        frc::SmartDashboard::PutNumber("backLAngle", backL.angle.Degrees().value());
+        br.SetModuleAbsolutePosition(backR.angle.Degrees().value());
+        frc::SmartDashboard::PutNumber("backRAngle", backR.angle.Degrees().value());
+    }
 
     // DRIVES EACH MODULE AT DESIRED WHEEL SPEED
     fl.DriveModule(frontL.speed.value());
